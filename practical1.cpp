@@ -63,35 +63,32 @@ int main()
     }
 
     int ch = 0;
-    
-    while(ch != 4){
-        cout << "\n1] Bubble sort\n2] Indertion sort\n3] Selection Sort\n4] Exit\nEnter choice :";
-        cin >> ch;
-        auto start = chrono::steady_clock::now();
-        switch(ch){
-            case 1: {
-                bubbleSort(arr, size);
-                auto end = chrono::steady_clock::now();
-                print(arr, size, start, end);
-                break;
-            }
-            case 2: {
-                insertionSort(arr, size);
-                auto end = chrono::steady_clock::now();
-                print(arr, size, start, end);
-                break;
-             }   
-            case 3: {
-                selectionSort(arr, size);
-                auto end = chrono::steady_clock::now();
-                print(arr, size, start, end);
-                break;
-            }
-            case 4:
-                break;
-            default:
-                cout << "Invalid choice. Please enter a valid option.\n";
-                break;
+    cout << "\n1] Bubble sort\n2] Indertion sort\n3] Selection Sort\n4] Exit\nEnter choice :";
+    cin >> ch;
+    auto start = chrono::steady_clock::now();
+    switch(ch){
+        case 1: {
+            bubbleSort(arr, size);
+            auto end = chrono::steady_clock::now();
+            print(arr, size, start, end);
+            break;
         }
+        case 2: {
+            insertionSort(arr, size);
+            auto end = chrono::steady_clock::now();
+            print(arr, size, start, end);
+            break;
+         }   
+        case 3: {
+            selectionSort(arr, size);
+            auto end = chrono::steady_clock::now();
+            print(arr, size, start, end);
+            break;
+        }
+        case 4:
+            break;
+        default:
+            cout << "Invalid choice. Please enter a valid option.\n";
+            break;
     }
 }
