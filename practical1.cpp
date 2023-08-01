@@ -88,7 +88,7 @@ int main()
         case 4:
             break;
         default:
-            cout << "Invalid choice. Please enter a valid option.\n";
+            cout << "Error : Invalid choice. \n";
             break;
     }
 }
