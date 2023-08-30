@@ -7,19 +7,24 @@ void swap(int &n1, int &n2){
     n2 = temp;
 }
 
+int partition(vector<int>& array, int begin, int end) {
+        int pivot = array[end];
+        int i = begin - 1;
+        for(int j = begin ; j <= end-1 ; j++) {
+        if(array[j] <= pivot) {
+            i++;
+            swap(array[i] , array[j]);
+        }
+    }
+    swap(array[i+1] , array[end]);
+    return i+1;
+}
+
 void quickSort(vector<int>& array, int const begin, int const end)
 {
     if(begin >= end) return;
 
-    int pivotIndex = begin + 1;
-    for(int i = begin + 1; i <= end ; i++)
-    {
-        if(array[i] <= array[begin]){
-            swap(array[i], array[pivotIndex]);
-            pivotIndex++;
-        }
-    }
-    swap(array[pivotIndex-1], array[begin]);
+    int pivotIndex = partition(array, begin, end);
 
     quickSort(array, begin, pivotIndex-1);
     quickSort(array, pivotIndex+1, end);
